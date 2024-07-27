@@ -7,7 +7,7 @@
 <h1 style="font-size:50px;text-align:center;">Contact Us</h1>
 <div style="text-align:center">
 <p>If you're interested in working with us or have any enquiries, feel free to contact us using the form below:</p>
-        <form action="#" method="post">
+        <form id="contactForm">
             <label for="name">Name:</label>
             <input style="margin-top: 30px;" type="text" id="name" name="name" required><br>
             <label for="email">Email:</label>
@@ -19,3 +19,18 @@
     <footer>
         <p>&copy; 2024 House Design Studio. All rights reserved.</p>
     </footer>
+<script> 
+document.getElementById("contactForm").addEventListener("submit", function(event) { 
+    event.preventDefault(); 
+    var name = document.getElementById("name").value; 
+    var email = document.getElementById("email").value; 
+    var message = document.getElementById("message").value;
+    console.log("Name: " + name); 
+    console.log("Email: " + email); 
+    console.log("Message: " + message);
+    document.getElementById("name").value = ""; 
+    document.getElementById("email").value = ""; 
+    document.getElementById("message").value = "";
+    alert("Thank you for your message, We'll consider your details " + name + "!"); 
+    }); 
+    </script>
